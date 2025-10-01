@@ -2,7 +2,7 @@
 
 
 ```markdown
-**Source / purpose:** condensed notes for TryHackMe Linux Fundamentals (3-part summary) + a beginner → advanced Bash summary (levels 0 → 10).  
+**Source / purpose:** condensed notes for TryHackMe Linux Fundamentals (3-part summary) ).  
 Use this as a quick reference while learning and doing Bandit / TryHackMe labs.
 
 ---
@@ -10,10 +10,7 @@ Use this as a quick reference while learning and doing Bandit / TryHackMe labs.
 ## Table of Contents
 1. [Linux Fundamentals — Part 1 (Basics & Shell)](#linux-fundamentals---part-1-basics--shell)  
 2. [Linux Fundamentals — Part 2 (Files, Permissions & Users)](#linux-fundamentals---part-2-files-permissions--users)  
-3. [Linux Fundamentals — Part 3 (Processes, Services & Networking)](#linux-fundamentals---part-3-processes-services--networking)  
-4. [Bash Progression — Level 0 → 10 (Summary & examples)](#bash-progression---level-0--10-summary--examples)  
-5. [Cheatsheet & Common Commands](#cheatsheet--common-commands)  
-6. [Next steps & resources](#next-steps--resources)
+3. [Linux Fundamentals — Part 3 (Processes, Services & Networking)](#linux-fundamentals---part-3-processes-services--networking)
 
 ---
 
@@ -108,18 +105,4 @@ Use this as a quick reference while learning and doing Bandit / TryHackMe labs.
 ### Logs
 - Logs commonly in `/var/log` (`syslog`, `auth.log`, `apache2/access.log`)
 
----
 
-## Bash Progression — Level 0 → 10 (Summary & examples)
-
-> This section walks you from the absolute basics to more advanced Bash skills.
-
-### Level 0 — Very first commands
-- `echo "text"` — print text
-- `whoami` — print current username
-- `pwd`, `ls`, `cd`, `cat` — basic navigation & viewing
-
-**Example**
-```bash
-echo "Hello World"
-whoami
