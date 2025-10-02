@@ -1,121 +1,91 @@
-# Networking Notes — TryHackMe Video Breakdown
+# Networking Notes — Summary (TryHackMe)
 
-This document summarizes key topics from the TryHackMe Networking Basics series using timestamps and task breakdowns.
-
----
-
-## 📺 Video 1: Networking Introduction
-
-**0:00:00 - Video Overview**  
-**0:00:25 - Task 1: What is Networking?**  
-- Communication between devices using protocols  
-- LAN vs WAN  
-
-**0:03:02 - Task 2: What is the Internet?**  
-- A global network of networks  
-- Uses TCP/IP stack  
-
-**0:05:46 - Task 3: Identifying Devices on a Network**  
-- IP addresses identify devices  
-- MAC addresses at Layer 2  
-- Hostname, IP, MAC demo via CLI  
-
-**0:20:44 - Task 4: Ping (ICMP)**  
-- ICMP protocol for checking connectivity  
-- `ping`, `traceroute` command basics  
-
-**0:23:12 - Task 5: Continue Your Learning: Intro to LAN**  
+This summary covers foundational networking concepts explained across multiple TryHackMe learning modules.
 
 ---
 
-## 📺 Video 2: LAN & Subnetting
+## 🌐 What is Networking?
+- Networking is the practice of connecting computers and devices to share resources and communicate.
+- It includes both wired and wireless communication and relies on protocols like TCP/IP.
 
-**0:00:00 - Video Overview**  
-**0:00:18 - Task 1: Introducing LAN Topologies**  
-- Star, Bus, Mesh topologies  
-- Practical examples in homes and businesses  
+## 🌍 What is the Internet?
+- The internet is a massive global network composed of smaller networks.
+- It allows devices worldwide to connect using IP addresses and standardized communication protocols.
 
-**0:01:39 - Task 2: A Primer on Subnetting**  
-- CIDR notation (e.g. /24)  
-- Usable hosts = 2^(32 - subnet bits) - 2  
-- Binary subnetting concepts  
+## 🖥️ Identifying Devices on a Network
+- Devices on a network are identified by:
+  - **IP address** (logical identifier)
+  - **MAC address** (physical identifier)
+  - **Hostname** (human-readable name)
+- Commands like `ip a` or `ifconfig` help reveal this information.
 
-**0:13:47 - Task 3: The ARP Protocol**  
-- ARP: Maps IP to MAC addresses  
-- Used in local network communication  
+## 📶 Ping & ICMP
+- Ping uses the **ICMP protocol** to test connectivity between devices.
+- It checks if a host is reachable and measures round-trip time.
 
-**0:23:43 - Task 4: The DHCP Protocol**  
-- Assigns IP addresses dynamically  
-- Process: Discover → Offer → Request → Acknowledge  
+## 🕸️ LAN Topologies
+- Common network structures include:
+  - **Star**: Devices connect to a central hub.
+  - **Bus**: All devices share a single communication line.
+  - **Mesh**: Devices connect directly to many or all others.
+- Topologies affect speed, reliability, and scalability.
 
-**0:26:05 - Task 5: Continue Your Learning: OSI Model**  
+## 📐 Subnetting Basics
+- Subnetting divides a network into smaller parts to improve organization and security.
+- Uses CIDR notation (e.g. /24) to define how many bits are for the network vs. host.
+- Key formulas:
+  - Hosts = 2^(32 - subnet bits) - 2
+  - Subnet mask determines usable IP range.
 
----
+## 🔍 ARP (Address Resolution Protocol)
+- ARP maps an IP address to a MAC address.
+- It’s used for communication within local networks (Layer 2).
 
-## 📺 Video 3: OSI Model
+## 🎯 DHCP (Dynamic Host Configuration Protocol)
+- Automatically assigns IP addresses to devices.
+- Process: Discover → Offer → Request → Acknowledge.
 
-**0:00:34 - Task 1: What is the OSI Model?**  
-- 7-layer model to describe networking functionality  
+## 🧱 OSI Model (7 Layers)
+1. **Application** – Interface for end-user applications.
+2. **Presentation** – Data formatting and encryption.
+3. **Session** – Manages connections and sessions.
+4. **Transport** – Ensures reliable delivery (TCP/UDP).
+5. **Network** – Handles routing and logical addressing (IP).
+6. **Data Link** – Deals with MAC addresses and Ethernet.
+7. **Physical** – Hardware transmission (cables, signals).
 
-**0:02:25 - Task 2: Layer 7 - Application**  
-**0:03:31 - Task 3: Layer 6 - Presentation**  
-**0:04:54 - Task 4: Layer 5 - Session**  
-**0:06:33 - Task 5: Layer 4 - Transport (TCP/UDP)**  
-**0:12:44 - Task 6: Layer 3 - Network (IP, routing)**  
-**0:15:24 - Task 7: Layer 2 - Data Link (MAC, Ethernet)**  
-**0:16:32 - Task 8: Layer 1 - Physical (cables, hardware)**  
+## 📦 Packets and Frames
+- **Packet**: Data unit at Layer 3 (Network).
+- **Frame**: Data unit at Layer 2 (Data Link).
+- Data is encapsulated as it moves down the OSI layers.
 
-**0:17:33 - Task 9: Practical - OSI Game**  
+## 🤝 TCP/IP and Handshakes
+- **TCP** provides reliable, ordered communication using a three-step handshake: SYN → SYN-ACK → ACK.
+- **UDP** is faster but unreliable; often used for streaming, DNS, gaming.
 
----
+## 🎯 Ports and Services
+- Ports identify specific services on a device:
+  - 80 (HTTP), 443 (HTTPS), 22 (SSH), 53 (DNS)
+- Used with IP to direct traffic to the correct process.
 
-## 📺 Video 4: Packets, TCP/IP, and Ports
+## 🚪 Port Forwarding
+- Allows external devices to access services inside a private network.
+- Example: forwarding port 80 to a web server behind a router.
 
-**0:00:00 - Video Overview**  
-**0:00:18 - Task 1: What are Packets and Frames**  
-- Packets: Logical data at Layer 3  
-- Frames: Physical data at Layer 2  
+## 🔥 Firewalls
+- Firewalls control traffic flow with allow/block rules.
+- Can be **stateful** (track connection state) or **stateless**.
 
-**0:04:23 - Task 2: TCP/IP (The Three-Way Handshake)**  
-- SYN → SYN-ACK → ACK  
-- Reliable delivery with TCP  
+## 🛡️ VPNs (Virtual Private Networks)
+- Encrypt data between your device and a remote server.
+- Useful for privacy, anonymity, and secure remote access.
 
-**0:11:57 - Task 3: Practical - Handshake**  
-- Wireshark example of SYN/SYN-ACK/ACK  
-
-**0:12:56 - Task 4: UDP/IP**  
-- Faster, unreliable protocol (e.g. DNS, video streaming)  
-
-**0:15:06 - Task 5: Ports 101 (Practical)**  
-- Common ports: 80 (HTTP), 443 (HTTPS), 22 (SSH)  
-- Use `netstat`, `ss`, or `nmap` for port visibility  
-
-**0:20:41 - Task 6: Continue Your Learning: Extending Your Network**  
-
----
-
-## 📺 Video 5: Firewalls, VPNs, Port Forwarding
-
-**0:00:00 - Video Overview**  
-**0:00:19 - Task 1: Introduction to Port Forwarding**  
-- Redirecting external traffic to internal devices  
-
-**0:02:08 - Task 2: Firewalls 101**  
-- Allow/block rules  
-- Stateful vs Stateless  
-
-**0:05:20 - Task 3: Practical - Firewall**  
-- UFW or iptables examples  
-
-**0:06:34 - Task 4: VPN Basics**  
-- Encrypts traffic between you and a server  
-- Useful for anonymity and secure remote access  
-
-**0:10:22 - Task 5: LAN Networking Devices**  
-- Router, Switch, Firewall, Modem (overview)  
-
-**0:14:40 - Task 6: Practical - Network Simulator**  
-- Visualize LAN topologies  
-- Configure IPs, test connectivity  
+## 🧰 LAN Devices Overview
+- **Router**: Directs traffic between networks.
+- **Switch**: Connects devices in a LAN.
+- **Firewall**: Monitors and controls incoming/outgoing traffic.
+- **Modem**: Connects to your ISP.
 
 ---
+
+This summary provides a solid foundation in computer networking, useful for cybersecurity, system administration, and ethical hacking.
