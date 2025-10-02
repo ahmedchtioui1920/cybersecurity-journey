@@ -19,5 +19,6 @@ This repository contains my Day 1 notes and starter files for learning Linux & B
 
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/ahmedchtioui1920/Day01_Linux_Bash.git
 cd Day01_Linux_Bash
+
