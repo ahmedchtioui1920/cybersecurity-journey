@@ -1,6 +1,6 @@
 ## `bash_cheatsheet.md`
 
-```markdown
+
 # Bash Cheatsheet — Common commands & examples
 
 ## Getting started
