@@ -1,1 +1,19 @@
-Sample output of Nmap scans from TryHackMe or local lab.
+# Sample Nmap Scan Output (example to study)
+
+Starting Nmap 7.91 ( https://nmap.org ) at 2025-10-03 14:00 CEST
+Nmap scan report for 192.168.56.101
+Host is up (0.00018s latency).
+Not shown: 65532 closed ports
+PORT     STATE SERVICE    VERSION
+21/tcp   open  ftp        vsftpd 3.0.3
+22/tcp   open  ssh        OpenSSH 7.6p1 Ubuntu 4 (protocol 2.0)
+80/tcp   open  http       Apache httpd 2.4.18
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X
+445/tcp  open  microsoft-ds
+MAC Address: 08:00:27:12:34:56 (Oracle VirtualBox)
+Service Info: Host: example; OS: Linux
+
+# Example script scan output snippet:
+Host script results:
+|_ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| smb-vuln-ms17-010: VULNERABLE: Host is likely vulnerable to MS17-010
