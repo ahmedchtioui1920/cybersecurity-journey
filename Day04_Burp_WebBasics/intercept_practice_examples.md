@@ -1,6 +1,5 @@
 Intercept and Modify Example Tasks:
 
-<<<<<<< HEAD:Day04_Burp_WebBasics/intercept_practice_examples.txt
 1. Intercept a GET request (e.g., /profile?id=5)
    → Modify ID to 1, forward request
 
