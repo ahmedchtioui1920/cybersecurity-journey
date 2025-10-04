@@ -1,25 +1,31 @@
-Intercept and Modify Example Tasks:
+---
 
-1. Intercept a GET request (e.g., /profile?id=5)
-   → Modify ID to 1, forward request
+## 💥 Task 14: Example Attack — XSS Injection (Manual)
+**Scenario**: Target web app has a contact form with an email input field.
 
-2. Submit login form
-   → Modify password field in Repeater, repeat until 200 OK
+**Steps:**
+1. Configure browser proxy through Burp (127.0.0.1:8080).
+2. Visit the `/contact` page in browser and fill the form.
+3. Burp intercepts the request (Intercept ON).
+4. Modify the email field:
+   ```
+   <script>alert('XSS')</script>
+   ```
+5. Forward the request.
+6. Observe a successful XSS popup when the page loads or response renders the script.
 
-3. Add XSS payload in search field
-   → <script>alert(1)</script>
+**Impact**: Demonstrates that user input is improperly sanitized and reflected in HTML.
 
-4. Use Decoder to base64-decode string: ZGVmYXVsdA==
+---
 
-5. Use Comparer:
-   → Compare login success and fail responses
-=======
-1. Login to a test site, capture the request
-2. Modify username or password in Repeater
-3. Intercept GET requests and change parameters
-4. Add a custom cookie to your request
-5. Remove headers like User-Agent — observe behavior
-6. Try injecting this in a search field:
-   <script>alert(1)</script>
-7. Use Decoder to base64 encode your name, then decode it back
+## ✅ Cheatsheet Summary
 
+| Tool     | Use Case                                |
+|----------|------------------------------------------|
+| Proxy    | Intercept, view, and modify requests     |
+| Repeater | Manual testing and fuzzing               |
+| Intruder | Automate attacks (limited in Community)  |
+| Decoder  | Encode/decode (Base64, Hex, etc.)        |
+| Comparer | Diff responses for subtle differences     |
+
+**Tip**: Always document input, expected output, and server behavior. Save intercepted requests for reporting.
