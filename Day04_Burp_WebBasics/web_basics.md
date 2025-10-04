@@ -1,60 +1,37 @@
-# Web Basics – Foundations for Pentesters
+# Web Basics
 
-## 1. HTTP Request & Response
+## HTTP Protocol
+- **HTTP Methods**:
+  - GET: Retrieve data
+  - POST: Submit data
+  - PUT: Update data
+  - DELETE: Remove data
 
-### 📤 HTTP Request Example (GET)
-```
-GET /login HTTP/1.1
-Host: example.com
-User-Agent: Mozilla/5.0
-Cookie: sessionid=1234
-```
+- **Status Codes**:
+  - 200 OK: Success
+  - 301 Moved Permanently: Redirection
+  - 403 Forbidden: Access denied
+  - 404 Not Found: Resource missing
+  - 500 Internal Server Error: Server crashed
 
-### 📥 HTTP Response Example
-```
-HTTP/1.1 200 OK
-Content-Type: text/html
-Set-Cookie: sessionid=5678; HttpOnly
-```
+## Cookies and Sessions
+- **Cookies** store data in the browser (e.g., login tokens)
+- **Sessions** are server-side stored, referenced via session cookies
 
-- **Request**: Sent by browser/client to the server
-- **Response**: Server replies with status, headers, and HTML content
-
-## 2. HTTP Methods
-| Method | Use                      |
-|--------|--------------------------|
-| GET    | Retrieve data (idempotent)|
-| POST   | Submit data              |
-| PUT    | Update resource          |
-| DELETE | Delete resource          |
-
-## 3. URL Structure
-```
-https://example.com:443/products?id=5&category=books
-|   |        |      |         |
-|   |        |      |         └── Query String
-|   |        |      └──────────── Path
-|   |        └────────────────── Domain
-|   └─────────────────────────── Protocol
-```
-
-## 4. Cookies & Sessions
-- Cookies store session or tracking info in the browser.
-- Example:
-```
-Set-Cookie: sessionid=abc123; Secure; HttpOnly
-```
-
-**HttpOnly** → Can't be accessed via JS. Helps protect against XSS.  
-**Secure** → Only sent over HTTPS.
-
-## 5. HTML Forms (Login Example)
+## HTML Forms
+Used for user input. Typical login form:
 ```html
-<form method="POST" action="/login">
-  <input type="text" name="username" />
-  <input type="password" name="password" />
-  <input type="submit" value="Login" />
+<form action="/login" method="POST">
+  <input name="username" type="text">
+  <input name="password" type="password">
 </form>
 ```
 
-This sends data to `/login` using POST — visible in Burp.
+## HTTP Headers
+Example:
+```
+GET / HTTP/1.1
+Host: example.com
+User-Agent: Firefox
+Cookie: sessionid=abc123
+```

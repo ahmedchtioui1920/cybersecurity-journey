@@ -1,47 +1,56 @@
-# Burp Suite Basics
+# Burp Suite Detailed Notes
 
-## 1. Install Burp Suite (Community)
-- Go to: https://portswigger.net/burp/communitydownload
-- Install Java if missing (`sudo apt install default-jre`)
+## 1. Installation
+- Download Burp Suite (Community Edition): https://portswigger.net/burp/communitydownload
+- Make sure Java is installed: `sudo apt install default-jre`
 
-## 2. Setup Your Browser to Use Burp Proxy
-- Set manual proxy to: `127.0.0.1:8080`
-- Install Burp CA Certificate:
-  - Visit http://burp in your browser → download cert
-  - Add it to browser trusted certs
+## 2. Setting up Proxy
+- Set browser proxy: 127.0.0.1:8080
+- Visit http://burp in browser
+- Download and install CA certificate for HTTPS interception
 
-## 3. Intercepting Requests
+## 3. Using Burp Suite Tools
 
-### Steps:
-1. Turn "Intercept ON"
-2. Visit a site in browser (e.g., http://example.com)
-3. Burp will pause the request — view/edit it
+### Proxy
+Intercepts browser traffic. Can modify requests on-the-fly.
 
-### Modify Example:
-Change GET /profile?id=123 to id=1 → send it
+### Repeater
+Used for manual testing of requests.
+- Right-click → Send to Repeater
+- Modify parameters, headers, etc.
 
-## 4. Tools Overview
+### Intruder
+Brute-force testing (e.g. login forms)
+- Set target and payload positions
+- Add payloads (e.g., password list)
+- Start attack
 
-### 🔹 Proxy
-Intercept & modify traffic
+### Decoder
+Decode/encode data:
+- Base64
+- URL encoding
+- HTML encoding
 
-### 🔹 Repeater
-Send and tweak requests manually
+### Comparer
+Compare 2 responses:
+- E.g., successful login vs failed login response
 
-### 🔹 Intruder
-Brute force login fields, test for fuzzing (e.g., user enumeration)
+## 4. Manual Brute-Force Example (Login)
+1. Intercept login request with Proxy
+2. Send to Repeater
+3. Modify username/password fields
+4. Observe status code / response length
 
-### 🔹 Decoder
-Decode hex, base64, URL encoding
+Example Request:
+```
+POST /login HTTP/1.1
+Host: vulnerable.com
+Content-Type: application/x-www-form-urlencoded
 
-### 🔹 Comparer
-Compare two responses (e.g., success vs fail)
+username=admin&password=admin123
+```
 
-## 5. Real Use Case: Login Brute Force (Manual)
-1. Intercept login request → Send to Repeater
-2. Modify username/password repeatedly
-3. Observe response differences (status, content length)
-
-## 6. Best Practice
-- Take notes of each test: input, result, response code
-- Save raw requests/responses if needed for reports
+## 5. Notes & Reporting
+- Save requests/responses as `.txt`
+- Note status code, response time, length
+- Good practice: log every manual test you do
