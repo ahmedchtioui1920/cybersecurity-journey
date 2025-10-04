@@ -1,12 +1,22 @@
 # Day 04 – Web Basics & Burp Suite
 
-This folder contains detailed study material on web technologies and Burp Suite for beginners in offensive security.
+This folder contains structured learning content and notes from Day 04 of the Offensive Security Werkstudent Preparation Plan.
 
-## Topics Covered
-- HTTP/S protocol, methods, status codes
-- Web forms, cookies, and headers
-- Burp Suite setup and key tools: Proxy, Repeater, Intruder
-- Example intercepts and manual testing
-- Cheat sheet and completed usage examples
+## 📘 Topics Covered
 
-Targeted for beginners preparing for Pentesting and Red Teaming tasks.
+- Web Basics (HTTP, Requests/Responses)
+- Burp Suite Setup and Manual Testing
+- Real-World XSS Example (Manual)
+- Tools: Proxy, Repeater, Intruder, Decoder
+
+## 📂 Files
+
+- `burp_suite_notes.md`: Detailed notes and cheatsheet from the TryHackMe module
+- `README.md`: Overview of the day's topic
+
+## ⏱️ Estimated Study Time
+6 hours total, including hands-on practice and note writing.
+
+---
+
+🔐 **Use responsibly. Only test systems you are authorized to.
