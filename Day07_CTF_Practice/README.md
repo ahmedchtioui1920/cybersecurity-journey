@@ -1,9 +1,9 @@
-# 🧪 Day07: CTF Practice & Reporting
+# Day07 - CTF Practice Lab
 
-This folder contains CTF-style practice exercises that apply all the tools covered so far in a mini-lab environment. It simulates real-world penetration testing steps from scanning to exploitation and report writing.
+This folder documents the practical application of tools like `nmap`, `msfconsole`, and others in a CTF-style mini-lab. The goal is to identify and exploit vulnerabilities using a structured penetration testing approach.
 
-## 📁 Folder Structure
+## Folder Structure
 
-- `ctf_scan_walkthrough.md`: Steps and explanations of scanning, exploitation, SMB enumeration, and auxiliary modules in Metasploit.
-- `metasploit_database.md`: Explanation of the Metasploit database, hosts, services, workspaces, and vulnerability tracking.
-- `advanced_ctf_techniques.md`: Notes on NTLM hash, meterpreter sessions, msfvenom, and multi-handler setup.
+- `README.md`: Overview of the day and contents.
+- `CTF_Mini_Lab_Report.md`: A report-style summary of the CTF challenge.
+- `Metasploit_Usage.md`: Notes on using msfconsole and modules.
