@@ -56,7 +56,7 @@ cybersecurity-journey/
 
 ---
 
-## 📚 Resources Used
+## 📚 Resources
 
 - [TryHackMe](https://tryhackme.com) – Linux, Networking, Web Security, CTFs  
 - [OverTheWire: Bandit](https://overthewire.org/wargames/bandit/) – Linux command-line practice  
