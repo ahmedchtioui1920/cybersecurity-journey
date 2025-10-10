@@ -122,12 +122,6 @@ For defenders, consider:
 
 ---
 
-## Part E — Notes on Ethics & Lab Safety
-- Only run C2 or payloads in isolated, controlled lab environments.  
-- Do not upload or commit any real malware or private data to public repos.  
-- Map exercises to MITRE ATT&CK IDs when reporting to learn consistent taxonomy.
-
----
 
 ## References & Further Reading
 - MITRE ATT&CK: https://attack.mitre.org  
