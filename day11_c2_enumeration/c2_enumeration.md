@@ -28,12 +28,6 @@ Command & Control (C2) is the mechanism an operator uses to remotely control com
 - **OpSec:** jitter/randomization, sleep, domain fronting, encrypted channels.  
 - **Evasion:** mimic legitimate traffic, use common ports (443), and blend with normal traffic.
 
-### Detection & Defensive Signals
-- Unusual periodic outbound connections to rare domains/IPs.  
-- Large numbers of connections to a single external service.  
-- Uncommon User-Agent strings or unusual TLS fingerprints.  
-- Processes doing unexpected network I/O (e.g., Office apps connecting externally).
-
 ---
 
 ## Part B — Enumeration (Host, Network & Active Directory)
