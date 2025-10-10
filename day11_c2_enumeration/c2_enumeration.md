@@ -11,18 +11,10 @@ Command & Control (C2) is the mechanism an operator uses to remotely control com
 
 ### Common C2 Frameworks (overview)
 - **Cobalt Strike (commercial)**  
-  - Industry-standard red team tool. Powerful pivoting, Beacon C2 with many evasion features.
-  - Use: penetration testing & adversary emulation in authorized engagements.
-  - Detection notes: produces characteristic network patterns; monitored by blue teams and EDR.
 
 - **Sliver (open-source)**  
-  - Flexible, modern C2 written by Bishop Fox. Supports multiple transport types and modular implants.
-  - Pros: active development, community.
-  - Detection notes: similar telemetry to other beacons; use lab modes.
 
 - **Mythic (open-source)**  
-  - C2 framework focused on modularity and team workflows. Web UI and multiple payload builders.
-  - Pros: extensible, integrates with payloads and operators.
 
 - **Empire (legacy / PowerShell Empire)**  
   - Previously popular for Windows PowerShell-based post-exploitation. Development slowed but concepts remain useful.
