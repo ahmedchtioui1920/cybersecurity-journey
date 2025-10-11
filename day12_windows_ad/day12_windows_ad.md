@@ -1,8 +1,5 @@
 # Day 12 — Windows & Active Directory (Beginner Level)
 
-This beginner-friendly guide introduces the basics of **Windows** and **Active Directory (AD)** for learners starting in cybersecurity. It focuses on simple concepts, easy-to-follow commands, and safe examples you can try in an isolated lab environment.
-
----
 
 ## 1. What is Windows? (Very Short)
 Windows is an operating system that runs programs, manages files, and handles users. For security work, focus on these simple ideas:
@@ -24,7 +21,6 @@ Open a Command Prompt or PowerShell window in your lab VM and try these (they ju
 - `net localgroup administrators` → shows who is a local administrator.
 - `tasklist` → lists running programs (simple view).
 
-> Tip: Run these on a lab machine where you have permission. They are read-only and safe.
 
 ---
 
@@ -82,14 +78,6 @@ Privilege escalation means moving from a normal user account to an account with 
 - A service runs as Administrator and uses a file that users can overwrite.  
 - Weak passwords or shared passwords for service accounts.
 
-> You **should not** try to exploit these on real systems. Learn the concepts and practice only in allowed labs.
-
----
-
-## 7. How to Practice Safely
-- Use lab platforms like TryHackMe or set up a local virtual machine (VirtualBox / VMware) for practice.  
-- Always label lab environments clearly and do not connect them to production networks.  
-- Start by running the **read-only** commands in section 5 to get comfortable.
 
 ---
 
@@ -99,13 +87,7 @@ Privilege escalation means moving from a normal user account to an account with 
 - **Domain account:** Login that works across many company computers.  
 - **SUID/Service:** Advanced topics — come back later when comfortable with basics.
 
----
 
-## 9. Next Steps (after this intro)
-1. Practice the read-only commands in a lab.  
-2. Learn how to identify which accounts are admins.  
-3. Learn about files and folders permissions (NTFS) at a basic level.  
-4. When ready, explore tools like WinPEAS in a controlled lab to see helpful hints for learning (don’t use them on real systems).
 
 ---
 
