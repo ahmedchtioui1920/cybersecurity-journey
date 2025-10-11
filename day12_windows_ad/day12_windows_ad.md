@@ -1,10 +1,7 @@
-# Day 12 — Windows & Active Directory (Beginner Level)
+# Day 12 — Windows & Active Directory 
 
-This beginner-friendly guide introduces the basics of **Windows** and **Active Directory (AD)** for learners starting in cybersecurity. It focuses on simple concepts, easy-to-follow commands, and safe examples you can try in an isolated lab environment.
 
----
-
-## 1. What is Windows? (Very Short)
+## 1. What is Windows? 
 Windows is an operating system that runs programs, manages files, and handles users. For security work, focus on these simple ideas:
 - **User accounts:** People who log in (standard user, administrator).  
 - **Processes:** Programs that run (you can see them in Task Manager).  
@@ -13,7 +10,7 @@ Windows is an operating system that runs programs, manages files, and handles us
 
 ---
 
-## 2. Simple Useful Commands (Windows - Beginner)
+## 2. Simple Useful Commands 
 Open a Command Prompt or PowerShell window in your lab VM and try these (they just show info):
 
 - `whoami` → shows your username.  
@@ -24,11 +21,10 @@ Open a Command Prompt or PowerShell window in your lab VM and try these (they ju
 - `net localgroup administrators` → shows who is a local administrator.
 - `tasklist` → lists running programs (simple view).
 
-> Tip: Run these on a lab machine where you have permission. They are read-only and safe.
 
 ---
 
-## 3. What is Active Directory (AD)? (Very Short)
+## 3. What is Active Directory (AD)?
 Active Directory is a system companies use to manage many Windows computers and users centrally. Key beginner ideas:
 - **Domain:** A group of computers and user accounts managed together.  
 - **Domain Controller (DC):** The server that knows about all users and computers.  
@@ -44,7 +40,7 @@ Active Directory is a system companies use to manage many Windows computers and 
 
 ---
 
-## 5. Beginner-Friendly Examples (Safe, Read-Only)
+## 5. Beginner-Friendly Examples 
 These commands only read information; they do not change anything. Run them in a lab VM if available.
 
 ### Windows (Command Prompt / PowerShell)
@@ -76,37 +72,19 @@ net group "Domain Admins" /domain
 
 ---
 
-## 6. Very Basic Privilege Escalation Concepts (Beginner overview)
+## 6. Very Basic Privilege Escalation Concepts
 Privilege escalation means moving from a normal user account to an account with more privileges (like Admin). As a beginner, just understand the common reasons this can happen:
 - Someone left a file or program that any user can change (bad permissions).  
 - A service runs as Administrator and uses a file that users can overwrite.  
 - Weak passwords or shared passwords for service accounts.
 
-> You **should not** try to exploit these on real systems. Learn the concepts and practice only in allowed labs.
 
 ---
 
-## 7. How to Practice Safely
-- Use lab platforms like TryHackMe or set up a local virtual machine (VirtualBox / VMware) for practice.  
-- Always label lab environments clearly and do not connect them to production networks.  
-- Start by running the **read-only** commands in section 5 to get comfortable.
-
----
-
-## 8. Quick Glossary
+## 7. Quick Glossary
 - **DC:** Domain Controller — server that manages user logins.  
 - **Admin:** A user with full control of a machine.  
 - **Domain account:** Login that works across many company computers.  
-- **SUID/Service:** Advanced topics — come back later when comfortable with basics.
+- **SUID/Service:** Advanced topics.
 
----
 
-## 9. Next Steps (after this intro)
-1. Practice the read-only commands in a lab.  
-2. Learn how to identify which accounts are admins.  
-3. Learn about files and folders permissions (NTFS) at a basic level.  
-4. When ready, explore tools like WinPEAS in a controlled lab to see helpful hints for learning (don’t use them on real systems).
-
----
-
-**Reminder:** This guide is for learning and lab practice only. Do not run commands or tools on systems you do not own or have permission to test.
