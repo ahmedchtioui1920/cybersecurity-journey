@@ -1,7 +1,7 @@
 # Day 12 — Windows & Active Directory (Beginner Level)
 
 
-## 1. What is Windows? (Very Short)
+## 1. What is Windows? 
 Windows is an operating system that runs programs, manages files, and handles users. For security work, focus on these simple ideas:
 - **User accounts:** People who log in (standard user, administrator).  
 - **Processes:** Programs that run (you can see them in Task Manager).  
@@ -10,7 +10,7 @@ Windows is an operating system that runs programs, manages files, and handles us
 
 ---
 
-## 2. Simple Useful Commands (Windows - Beginner)
+## 2. Simple Useful Commands 
 Open a Command Prompt or PowerShell window in your lab VM and try these (they just show info):
 
 - `whoami` → shows your username.  
@@ -24,7 +24,7 @@ Open a Command Prompt or PowerShell window in your lab VM and try these (they ju
 
 ---
 
-## 3. What is Active Directory (AD)? (Very Short)
+## 3. What is Active Directory (AD)?
 Active Directory is a system companies use to manage many Windows computers and users centrally. Key beginner ideas:
 - **Domain:** A group of computers and user accounts managed together.  
 - **Domain Controller (DC):** The server that knows about all users and computers.  
@@ -40,7 +40,7 @@ Active Directory is a system companies use to manage many Windows computers and 
 
 ---
 
-## 5. Beginner-Friendly Examples (Safe, Read-Only)
+## 5. Beginner-Friendly Examples 
 These commands only read information; they do not change anything. Run them in a lab VM if available.
 
 ### Windows (Command Prompt / PowerShell)
@@ -72,7 +72,7 @@ net group "Domain Admins" /domain
 
 ---
 
-## 6. Very Basic Privilege Escalation Concepts (Beginner overview)
+## 6. Very Basic Privilege Escalation Concepts
 Privilege escalation means moving from a normal user account to an account with more privileges (like Admin). As a beginner, just understand the common reasons this can happen:
 - Someone left a file or program that any user can change (bad permissions).  
 - A service runs as Administrator and uses a file that users can overwrite.  
