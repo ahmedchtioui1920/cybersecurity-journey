@@ -1,4 +1,4 @@
-# Day 12 — Windows & Active Directory (Beginner Level)
+# Day 12 — Windows & Active Directory 
 
 
 ## 1. What is Windows? 
