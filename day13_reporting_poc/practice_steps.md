@@ -1,7 +1,6 @@
 # Day 13 — PoC Practice: Public Directory Listing (Beginner)
 
-This practice file walks you step-by-step through **safe**, **read-only** actions to discover and document a public directory listing on a web server in a lab environment, and then produce a completed PoC report entry. Do **not** run these steps against systems you do not own or have explicit permission to test.
-
+This practice file walks you step-by-step through **safe**, **read-only** actions to discover and document a public directory listing on a web server in a lab environment, and then produce a completed PoC report entry.
 ## Overview
 Goal: Find whether a target web server exposes a directory listing and document the finding into a beginner-friendly PoC. This exercise is entirely non-destructive and focuses on reconnaissance and documentation skills.
 
@@ -127,6 +126,4 @@ Create `final_report_snippet.md` combining the PoC and a one-paragraph executive
 - Always include timestamps and proof of permission in your final report.  
 - This workflow is suitable for beginners learning reporting discipline; it avoids exploitation and focuses on clarity and reproducibility.
 
----
 
-Happy learning — if you want, I can package this workspace (PoC markdown + README + evidence placeholders) into a ZIP you can download and open locally.
