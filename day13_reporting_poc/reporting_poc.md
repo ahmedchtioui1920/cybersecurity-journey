@@ -136,7 +136,7 @@ Content-Type: text/html; charset=utf-8
 ## 10. Legal & Ethical Considerations for Reporting
 - Always follow the rules of engagement (ROE). Include them in the scope section.  
 - Share sensitive findings securely (encrypted email, secure portal).  
-- Coordinate disclosure timelines with stakeholders — don’t publish sensitive PoCs publicly until the issue is fixed unless part of an agreed disclosure plan.
+- Coordinate disclosure timelines with stakeholders.
 
 ---
 
@@ -148,6 +148,3 @@ Content-Type: text/html; charset=utf-8
 - MITRE ATT&CK mapping & detection suggestions ✔️  
 - Signed ROE / permission proof in appendices ✔️
 
----
-
-**Reminder:** This document focuses on producing safe, clear, and actionable reports. Always use PoCs responsibly and avoid providing destructive exploit code in reports intended for general audiences.
