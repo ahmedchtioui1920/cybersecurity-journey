@@ -1,8 +1,8 @@
-# day12_windows_ad
+# day12_windows_ad_beginner
 
-Windows Fundamentals & Active Directory study notes for Day 12.
+Beginner-friendly Windows & Active Directory notes for Day 12.
 
 Files:
-- `day12_windows_ad.md` — main study document covering Windows internals, privesc vectors, AD enumeration, commands and safe lab examples.
+- `day12_windows_ad_beginner.md` — simplified, beginner-level guide to Windows and AD concepts and safe examples.
 
 **Important:** Use only in authorized lab environments. Do not test systems without explicit permission.

@@ -1,145 +1,112 @@
-# Day 12 — Windows Fundamentals & Active Directory (AD)
+# Day 12 — Windows & Active Directory (Beginner Level)
 
-This document provides a concise, study-ready primer covering Windows internals relevant to red teaming and penetration testing, plus Active Directory (AD) fundamentals. It focuses on concepts, common commands, privilege escalation vectors, and AD enumeration — intended for authorized lab practice only.
-
----
-
-## 1. Windows Fundamentals (High-level)
-
-### Windows Architecture Overview
-- **User mode vs Kernel mode:** User applications run in user mode; critical OS components (drivers, kernel) run in kernel mode with higher privileges.
-- **Processes & Threads:** Process = running program; thread = execution path within a process. `tasklist` / Task Manager show processes.
-- **Registry:** Central hierarchical database storing configuration (`HKLM`, `HKCU`, etc.). Many persistence points and configuration settings are stored here.
-- **Services:** Windows services run in background (often as SYSTEM). Managed via `sc`, `services.msc`, `Get-Service` in PowerShell.
-- **Filesystem permissions:** NTFS ACLs control access. Familiarize with `icacls` and file permissions basics.
-
-### Important Accounts & Tokens
-- **SYSTEM:** Highest local account on Windows machines.
-- **Administrators:** Local admin group members have broad control.
-- **Service accounts:** Often used by services; may be misconfigured or reuse weak credentials.
-- **Tokens:** Windows uses access tokens for security contexts; token impersonation can be abused.
+This beginner-friendly guide introduces the basics of **Windows** and **Active Directory (AD)** for learners starting in cybersecurity. It focuses on simple concepts, easy-to-follow commands, and safe examples you can try in an isolated lab environment.
 
 ---
 
-## 2. Common Windows Commands for Enumeration
-
-### Basic reconnaissance
-- `whoami /all` — current user and group memberships + privileges  
-- `systeminfo` — OS, patches, uptime  
-- `hostname` — machine name  
-- `set` — environment variables  
-- `qwinsta` / `query user` — logged on sessions (useful for lateral movement)
-
-### Network & services
-- `netstat -ano` — active connections with PIDs  
-- `tasklist /svc` — processes and their services  
-- `sc query` — list services  
-- `Get-Service` (PowerShell) — list services
-
-### Users & Groups
-- `net user` — local user accounts  
-- `net user <username>` — details for a user  
-- `net localgroup administrators` — members of local admins
-
-### Scheduled Tasks & Persistence
-- `schtasks /Query /FO LIST /V` — list scheduled tasks  
-- `reg query HKLM\Software\Microsoft\Windows\CurrentVersion\Run` — autorun keys  
-- `wmic service get name,displayname,pathname,started` — service info
+## 1. What is Windows? (Very Short)
+Windows is an operating system that runs programs, manages files, and handles users. For security work, focus on these simple ideas:
+- **User accounts:** People who log in (standard user, administrator).  
+- **Processes:** Programs that run (you can see them in Task Manager).  
+- **Services:** Background programs that start automatically (e.g., antivirus).  
+- **Registry:** A settings database where Windows stores configuration (don’t edit it unless instructed in a lab).
 
 ---
 
-## 3. Privilege Escalation Vectors (Windows)
+## 2. Simple Useful Commands (Windows - Beginner)
+Open a Command Prompt or PowerShell window in your lab VM and try these (they just show info):
 
-Common categories where privilege escalation occurs:
-- **Misconfigured services** (weak service binary paths, writable service executables)  
-- **Weak or reused credentials** (local accounts with weak passwords)  
-- **Unquoted service paths** (allows exec of malicious binary)  
-- **Insecure file/folder permissions** (writable files executed by SYSTEM)  
-- **Token impersonation / token theft** (NT AUTHORITY\SYSTEM tokens)  
-- **Scheduled tasks** with insecure configurations  
-- **DLL hijacking** and malicious DLL placement  
-- **Kernel exploits** (less common on patched systems)
+- `whoami` → shows your username.  
+- `whoami /all` → shows extra info about user groups and privileges.  
+- `systeminfo` → shows basic system details (OS, build).  
+- `hostname` → shows the computer’s name.  
+- `net user` → lists local user accounts.  
+- `net localgroup administrators` → shows who is a local administrator.
+- `tasklist` → lists running programs (simple view).
 
-### Tools to find privesc vectors
-- **WinPEAS** — comprehensive Windows enumeration script for privilege escalation  
-- **PowerUp** — part of PowerSploit for privesc checks  
-- **Seatbelt** — situational awareness for Windows
+> Tip: Run these on a lab machine where you have permission. They are read-only and safe.
 
 ---
 
-## 4. Active Directory (AD) Fundamentals
-
-### What is AD?
-Active Directory is Microsoft’s directory service for Windows domain networks. It stores users, computers, groups, policies, and more. AD commonly used in enterprises; compromising AD can lead to full domain compromise.
-
-### Key AD Concepts
-- **Domain Controller (DC):** Server that responds to authentication and directory queries (runs Active Directory Domain Services).  
-- **Domain vs Local accounts:** Domain accounts are centrally managed; local accounts are machine-specific.  
-- **Organizational Units (OUs):** Containers for organizing objects and applying group policies.  
-- **Group Policy Objects (GPOs):** Centralized configuration and policy application mechanism.  
-- **Service Principal Names (SPNs):** Used for Kerberos authentication to services; target for Kerberoasting attacks.  
-- **Trusts:** Relationships between domains that can be abused to escalate privileges across domains.
+## 3. What is Active Directory (AD)? (Very Short)
+Active Directory is a system companies use to manage many Windows computers and users centrally. Key beginner ideas:
+- **Domain:** A group of computers and user accounts managed together.  
+- **Domain Controller (DC):** The server that knows about all users and computers.  
+- **Accounts:** Users in AD can log on to many computers using one account.  
+- **Groups:** Collections of users (e.g., Domain Admins) that have special rights.
 
 ---
 
-## 5. AD Enumeration (Conceptual & Commands)
-
-### Enumerate domain information (requires domain creds / ACLs)
-- `nltest /dclist:domain.com` — list DCs  
-- `nltest /domain_trusts` — domain trusts  
-- `net group "Domain Admins" /domain` — list domain admins (if allowed)
-
-### LDAP & basic queries
-- `ldapsearch -x -h <dc> -b "dc=domain,dc=com"` — query directory (requires appropriate access)  
-- Use **PowerView** (PowerShell) for rich AD enumeration: `Get-NetUser`, `Get-NetGroup`, `Get-NetDomainController`
-
-### Kerberos & SPNs
-- **SPN enumeration:** find service principal names to attempt Kerberoasting  
-- Kerberoasting: request service tickets for SPNs and attempt offline cracking to get service account passwords
-
-### Tools for AD enumeration & attacks
-- **BloodHound** (uses Neo4j) — visualizes AD attack paths (collect data using SharpHound)  
-- **Impacket** — Python tools for SMB, RPC, Kerberos interactions (`GetADUsers.py`, `secretsdump.py`)  
-- **CrackMapExec** — lateral movement & enumeration toolkit
+## 4. Simple AD Concepts to Know
+- **Domain vs Local account:** A local account only works on one PC; a domain account works across the network.  
+- **Administrator vs User:** Administrators can install software and change settings. Users have fewer rights.  
+- **Group Policy:** Rules that admins push to many computers (like “disable USB drives” or “install software”).
 
 ---
 
-## 6. Safe Examples & Non-destructive Commands (Lab only)
+## 5. Beginner-Friendly Examples (Safe, Read-Only)
+These commands only read information; they do not change anything. Run them in a lab VM if available.
 
-Use these only in authorized labs.
-
-#### Windows examples (PowerShell / CMD)
+### Windows (Command Prompt / PowerShell)
 ```powershell
-# Who am I and privileges
-whoami /all
+# Who am I?
+whoami
 
-# List local admins
+# Show system information (can be long)
+systeminfo
+
+# Show local users
+net user
+
+# Show local administrators
 net localgroup administrators
 
-# List scheduled tasks
-schtasks /Query /FO LIST /V
+# List running processes (simple list)
+tasklist
 ```
 
-#### Linux examples (for AD tooling or management)
+### If you have a small AD lab (optional)
 ```bash
-# Basic LDAP query (requires tools)
-ldapsearch -x -h dc.example.local -b "dc=example,dc=local"
+# Find the domain controller (the server that runs AD)
+nltest /dclist:<your-domain>
 
-# BloodHound/SharpHound note: run in lab following official documentation
+# List domain groups (requires domain access)
+net group "Domain Admins" /domain
 ```
 
 ---
 
-## 7. Detection & Defensive Notes (for defenders)
-- **Monitor privileged account activity** (sudden use of PsExec, DCSync-like operations).  
-- **Log and centralize PowerShell usage** (Enable ScriptBlock logging, use AMSI).  
-- **Monitor service creation and scheduled tasks** for anomalies.  
-- **Harden Kerberos settings** (use constrained delegation cautiously).  
-- **Segment admin workstations** and use tiered admin models to limit lateral movement.
+## 6. Very Basic Privilege Escalation Concepts (Beginner overview)
+Privilege escalation means moving from a normal user account to an account with more privileges (like Admin). As a beginner, just understand the common reasons this can happen:
+- Someone left a file or program that any user can change (bad permissions).  
+- A service runs as Administrator and uses a file that users can overwrite.  
+- Weak passwords or shared passwords for service accounts.
+
+> You **should not** try to exploit these on real systems. Learn the concepts and practice only in allowed labs.
 
 ---
 
-## References & Further Reading
-- Microsoft Docs: Windows internals & Active Directory fundamentals  
-- BloodHound docs: https://bloodhound.readthedocs.io  
-- WinPEAS / PowerUp / PowerView repositories on GitHub
+## 7. How to Practice Safely
+- Use lab platforms like TryHackMe or set up a local virtual machine (VirtualBox / VMware) for practice.  
+- Always label lab environments clearly and do not connect them to production networks.  
+- Start by running the **read-only** commands in section 5 to get comfortable.
+
+---
+
+## 8. Quick Glossary
+- **DC:** Domain Controller — server that manages user logins.  
+- **Admin:** A user with full control of a machine.  
+- **Domain account:** Login that works across many company computers.  
+- **SUID/Service:** Advanced topics — come back later when comfortable with basics.
+
+---
+
+## 9. Next Steps (after this intro)
+1. Practice the read-only commands in a lab.  
+2. Learn how to identify which accounts are admins.  
+3. Learn about files and folders permissions (NTFS) at a basic level.  
+4. When ready, explore tools like WinPEAS in a controlled lab to see helpful hints for learning (don’t use them on real systems).
+
+---
+
+**Reminder:** This guide is for learning and lab practice only. Do not run commands or tools on systems you do not own or have permission to test.
