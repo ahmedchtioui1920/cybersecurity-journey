@@ -1,9 +1,5 @@
 # Day 13 — Reporting & Proof of Concept (PoC) for Pentesting
 
-This document covers best practices for **reporting** penetration testing findings and producing safe, clear **Proofs of Concept (PoC)**. It is designed to help you document vulnerabilities professionally so defenders can reproduce, understand, and fix issues quickly.
-
----
-
 ## 1. Purpose of a Pentest Report
 A pentest report translates technical findings into actionable information for stakeholders. It should:
 - Communicate impact and risk clearly.
