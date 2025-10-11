@@ -9,7 +9,7 @@ Goal: Find whether a target web server exposes a directory listing and document 
 ---
 
 ## Setup 
-1. Use an isolated lab VM or an online lab instance (TryHackMe box or similar). Ensure the target `lab.example.local` resolves in your lab environment (hosts file or lab DNS).
+1. Used an online lab instance (TryHackMe box). Ensure the target `lab.example.local` resolves in your lab environment.
 2. Have basic CLI tools installed on your tester VM: `curl`, `sed`, `mkdir`, `scrot` (for screenshots) or use your OS screenshot tool.
 3. Create a workspace folder to store evidence and notes:
 ```bash
