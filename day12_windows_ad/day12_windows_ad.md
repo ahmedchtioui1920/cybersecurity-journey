@@ -81,14 +81,10 @@ Privilege escalation means moving from a normal user account to an account with 
 
 ---
 
-## 8. Quick Glossary
+## 7. Quick Glossary
 - **DC:** Domain Controller — server that manages user logins.  
 - **Admin:** A user with full control of a machine.  
 - **Domain account:** Login that works across many company computers.  
 - **SUID/Service:** Advanced topics — come back later when comfortable with basics.
 
 
-
----
-
-**Reminder:** This guide is for learning and lab practice only. Do not run commands or tools on systems you do not own or have permission to test.
