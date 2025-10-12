@@ -35,19 +35,65 @@ This repository documents my **2-week intensive learning path in Offensive Secur
 cybersecurity-journey/
 ├── Day01_Linux_Bash/
 │ ├── linux_notes.md
-│ ├── bash_cheatsheet.md
-│ ├── backup_script.sh
-│ └── README.md
+│ └── bash_cheatsheet.md
 ├── Day02_Networking_Basics/
 │ ├── networking_notes.md
 │ ├── subnetting_practice.md
 │ ├── commands_demo.txt
 │ └── README.md
 ├── Day03_Nmap_Enumeration/
-│ └── ...
+│ ├── nmap_notes.md
+│ ├── nmap_recon_script.sh
+│ ├── nmap_scan_results.txt
+│ └── enumeration_notes.md
 ├── Day04_Burp_WebBasics/
-│ └── ...
-├── ...
+│ ├── README.md
+│ ├── burp_suite_notes.md
+│ ├── intercept_practice_examples.md
+│ ├── web_basics.md
+│ └── web_vulnerabilities.md
+├── Day05_Vulnerabilities_Exploits/
+│ ├── README.md
+│ ├── vulnerability_exploits_notes.md
+│ └── practice_manual_exploitation.md
+├── Day06_Metasploit_Basics/
+│ ├── README.md
+│ ├── metasploit_introduction.md
+│ ├── metasploit_modules.md
+│ └── msfconsole_practice.md
+├── Day07_CTF_Practice/
+│ ├── README.md
+│ ├── CTF_Mini_Lab_Report.md
+│ └── Metasploit_Usage.md
+├── Day08_Bash_Automation/
+│ ├── README.md
+│ ├── bash_scripting_basics.md
+│ ├── recon_scripts.md
+│ └── examples/
+│ ├── nmap_grep.sh
+│ ├── recon_loop.sh
+│ └── multi_target_scan.sh
+├── Day09_PythonForPentesters/
+│ ├── README.md
+│ └── day9_pentest_tools.py
+├── Day10_RedTeaming/
+│ ├── README.md
+│ └── day10_intro.md
+├── day11_c2_enumeration/
+│ ├── README.md
+│ └── c2_enumeration.md
+├── day12_windows_ad/
+│ ├── README.md
+│ └── day12_windows_ad.md
+├── day13_reporting_poc/
+│ ├── README.md
+│ ├── practice_steps.md
+│ ├── reporting_poc.md
+│ └── evidence/
+│ └── placeholder.txt
+├── day14_final_ctf/
+│ ├── README.md
+│ └── ctf_final.md
 └── README.md
 ```
 
