@@ -1,7 +1,7 @@
 # Day01_Linux_Bash
 
 
-This repository contains my Day 1 notes and starter files for learning Linux & Bash as part of my cybersecurity journey. The notes are based on TryHackMe's "Linux Fundamentals" and practical Bandit exercises.
+This repository contains my Day 1 notes and starter files for learning Linux & Bash as part of my cybersecurity journey. The notes are based on TryHackMe's "Linux Fundamentals".
 
 
 ## Files (all in repo root)
