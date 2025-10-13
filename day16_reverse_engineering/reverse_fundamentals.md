@@ -93,23 +93,8 @@ Interpretation tips:
 
 ---
 
-## 6. Beginner Practice Tasks
-1. Run `file`, `strings`, `readelf` on a known C compiled "Hello world" binary and compare.  
-2. Use `strace` to see which files a binary opens.  
-3. Load a small C program that asks for a password; use `gdb` to find the password-check routine and observe the comparison.  
-4. Open the same binary in Ghidra and compare the decompiled function for the password check with the assembly view.
 
----
-
-## 7. Further Reading & Resources
-- "Practical Reverse Engineering" (book) — by Dang, Gazet, et al.  
-- Ghidra official docs & tutorials.  
-- radare2 book and Cutter GUI tutorials.  
-- GDB cheat sheet (useful commands).
-
----
-
-## 8. Cheatsheet (one-liners)
+## 6. Cheatsheet (one-liners)
 ```bash
 file prog
 strings prog | less
@@ -120,6 +105,3 @@ ltrace -o ltrace.log ./prog
 gdb ./prog
 ```
 
----
-
-**Reminder:** Reverse engineering is a deep field — start small, document everything, and practice only in legal, isolated environments.
