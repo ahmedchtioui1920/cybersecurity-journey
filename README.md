@@ -28,6 +28,11 @@ This repository documents my **2-week intensive learning path in Offensive Secur
 | 13  | Reporting + Proof of Concept | Learn documentation best practices for pentesting |
 | 14  | Final CTF + Self-Assessment | End-to-end simulated pentest task and evaluation |
 
+### **Extra Days (Deepen Skills)**
+| Day | Topics | Goal |
+|-----|--------|------|
+| 15   | Cryptography | Learn encryption, hashing, signatures, OpenSSL basics |
+| 16   | Reverse Engineering (Binaries) | Static & dynamic analysis, basic GDB/Ghidra workflow |
 ---
 
 ## 📂 Repository Structure
