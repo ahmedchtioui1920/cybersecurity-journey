@@ -15,6 +15,4 @@
   - Range: 192.168.1.1 – 192.168.1.62
   - Broadcast: 192.168.1.63
 
-## Practice Questions
-- What is the broadcast address of 10.0.0.0/30?
-- How many usable hosts in 172.16.0.0/20?
+
