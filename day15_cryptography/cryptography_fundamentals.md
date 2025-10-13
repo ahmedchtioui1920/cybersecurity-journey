@@ -69,14 +69,7 @@ openssl dgst -sha256 -verify public.pem -signature sign.bin msg.txt
 
 ---
 
-## 6. Practice Tasks
-1. Encrypt and decrypt your own text using AES and RSA.  
-2. Hash a password using SHA256 and bcrypt.  
-3. Create a small "signature verification" example using OpenSSL.  
-
----
-
-## 7. Summary
+## 6. Summary
 - Symmetric = Fast, single key  
 - Asymmetric = Secure, key pair  
 - Hashing = One-way integrity check  
