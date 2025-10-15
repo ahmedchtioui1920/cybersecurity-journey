@@ -1,6 +1,6 @@
 # Day 16 — Reverse Engineering (Binaries, Beginner Fundamentals)
 
-This short guide covers practical, beginner-friendly fundamentals for **reverse engineering compiled binaries** (ELF/PE), focusing on static and dynamic analysis techniques and safe lab practice. Do not analyze binaries you don't have permission to work with.
+This short guide covers practical, beginner-friendly fundamentals for **reverse engineering compiled binaries** (ELF/PE), focusing on static and dynamic analysis techniques and safe lab practice. 
 
 ---
 
