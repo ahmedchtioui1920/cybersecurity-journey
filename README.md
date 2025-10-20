@@ -4,7 +4,7 @@ This repository documents my **2-week intensive learning path in Offensive Secur
 
 ---
 
-## 📅 Learning Plan 
+## 📅 Learning Plan Overview
 
 ### **Week 1: Build Core Skills + Start Offensive Tools**
 | Day | Topics | Goal |
